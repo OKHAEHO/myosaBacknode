@@ -1,0 +1,33 @@
+
+mysql -uroot -p //root계정접속
+비밀번호있으면 치는데 없으면 그냥 엔터 누르기
+
+* DB만들기
+CREATE DATABASE cheerupyouth;
+
+* user 만들기
+CREATE USER 'myosa'@'localhost' IDENTIFIED BY '1234';
+
+* 권한주기 (일단 우리 cheerupyouth DB에만 권한줄게요)
+GRANT ALL PRIVILEGES ON cheerupyouth.* TO 'myosa'@'localhost';
+
+* 권한 적용하기
+FLUSH PRIVILEGES;
+
+* 중요 *  
+모든 쿼리문은 workbanch에서 쓰고 적용 
+이유 - 나중에 이름이나 테이블 요소들 바꿀 때 똑같이 하기 ㄱㄴ? 난 못함
+
+* Table 생성 요령
+CREATE TABLE 테이블이름 (
+
+);
+
+primary key는 무조건 있어야함. (보통 no int(50) not null auto_increment primary key 써서 쓰긴 하는데 테이블 구성마다 다름)
+이쪽은 직접 찾아보면서 테이블 구성하면 좋을 듯
+
+테이블 이름 통일 : '적용할 페이지 앞단어'_'세부사항'
+ex) Tutorial ch2의 주소 정보 -> T_ch2_address
+    Login 회원정보 -> L_user
+
+create, select, insert, drop 등등 나머지 쿼리 작성 요령은 직접 공부하셔야합니다.

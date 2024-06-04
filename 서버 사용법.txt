@@ -1,0 +1,22 @@
+아마 내가 해놔서 안해도 될건데 혹시 모르니까
+
+터미널 열기
+npm init 쓰고 ok나올 떄까지 엔터누르기
+npm install express
+npm install body-parser
+npm install mysql2
+npm install cors
+
+12번째 줄에 본인 서버주소적기 (윈도우 : ipconfig, 맥 : 시스템설정-네트워크-연결된와이파이세부사항-ip주소)
+
+* 이거쓰고 http://로컬주소:8082/주소이름 하면 테이블 내용들 출력해줌
+app.get("/주소이름", function (req, res) {
+  const query = "select * from 테이블 이름";
+  db.query(query, function (error, result) {
+    if (error) {
+      console.log(error);
+    }
+    res.json(result);
+  });
+});
+
